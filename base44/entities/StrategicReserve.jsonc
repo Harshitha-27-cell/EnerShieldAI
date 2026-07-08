@@ -1,0 +1,48 @@
+{
+  "name": "StrategicReserve",
+  "type": "object",
+  "properties": {
+    "facility_name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "capacity_million_barrels": {
+      "type": "number"
+    },
+    "current_level_million_barrels": {
+      "type": "number"
+    },
+    "utilization_pct": {
+      "type": "number"
+    },
+    "coverage_days": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "operational",
+        "filling",
+        "releasing",
+        "maintenance"
+      ],
+      "default": "operational"
+    },
+    "last_release_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "facility_name",
+    "location"
+  ]
+}

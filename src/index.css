@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 9.4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9.4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 160 72% 52%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 263 86% 76%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 240 3% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 3% 15%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 72% 70%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 160 72% 52%;
+    --chart-1: 160 72% 52%;
+    --chart-2: 263 86% 76%;
+    --chart-3: 0 100% 71%;
+    --chart-4: 45 93% 58%;
+    --chart-5: 200 80% 60%;
+    --radius: 0.75rem;
+    --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 240 5% 65%;
+    --sidebar-primary: 160 72% 52%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 240 3% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 4% 14%;
+    --sidebar-ring: 160 72% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    overscroll-behavior: none;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Safe area utilities */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-left { padding-left: env(safe-area-inset-left); }
+.safe-right { padding-right: env(safe-area-inset-right); }
+.pb-safe { padding-bottom: calc(env(safe-area-inset-bottom) + 4rem); }
+
+/* No text selection on interactive elements */
+button, nav, a {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: hsl(0 0% 7%); }
+::-webkit-scrollbar-thumb { background: hsl(240 4% 20%); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(240 4% 30%); }
+
+/* Glassmorphism utility */
+.glass { 
+  background: rgba(24, 24, 26, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.glass-mint {
+  background: rgba(45, 221, 168, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(45, 221, 168, 0.15);
+}
+.glass-lavender {
+  background: rgba(167, 139, 250, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+}
+.glass-coral {
+  background: rgba(255, 107, 107, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 107, 107, 0.15);
+}
+
+/* Glow effects */
+.glow-mint { box-shadow: 0 0 30px rgba(45, 221, 168, 0.15); }
+.glow-lavender { box-shadow: 0 0 30px rgba(167, 139, 250, 0.15); }
+.glow-coral { box-shadow: 0 0 30px rgba(255, 107, 107, 0.15); }
+
+/* Pulse animation for live indicators */
+@keyframes pulse-mint {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 221, 168, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(45, 221, 168, 0); }
+}
+.pulse-mint { animation: pulse-mint 2s infinite; }
+
+@keyframes pulse-coral {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 107, 107, 0); }
+}
+.pulse-coral { animation: pulse-coral 2s infinite; }
+
+/* Route flow animation */
+@keyframes route-flow {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}

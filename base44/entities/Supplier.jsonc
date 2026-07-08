@@ -1,0 +1,71 @@
+{
+  "name": "Supplier",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "crude_oil",
+        "lng",
+        "refined_products",
+        "petrochemicals"
+      ]
+    },
+    "reliability_score": {
+      "type": "number"
+    },
+    "risk_rating": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "capacity_mbpd": {
+      "type": "number"
+    },
+    "current_supply_mbpd": {
+      "type": "number"
+    },
+    "contract_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "expiring",
+        "negotiation",
+        "suspended"
+      ]
+    },
+    "route": {
+      "type": "string"
+    },
+    "avg_delivery_days": {
+      "type": "number"
+    },
+    "price_premium_pct": {
+      "type": "number"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "country",
+    "type"
+  ]
+}

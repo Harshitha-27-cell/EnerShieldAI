@@ -1,0 +1,17 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "government_official",
+        "refinery_operator",
+        "logistics_manager",
+        "analyst"
+      ],
+      "default": "analyst"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "InfrastructureNode",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "port",
+        "refinery",
+        "pipeline",
+        "distribution_center",
+        "storage",
+        "terminal"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    },
+    "capacity": {
+      "type": "number"
+    },
+    "current_utilization_pct": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "operational",
+        "degraded",
+        "offline",
+        "maintenance"
+      ],
+      "default": "operational"
+    },
+    "risk_score": {
+      "type": "number"
+    },
+    "connected_nodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "throughput_mbpd": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "location"
+  ]
+}

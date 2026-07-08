@@ -1,0 +1,78 @@
+{
+  "name": "RiskEvent",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "geopolitical",
+        "logistics",
+        "sanctions",
+        "market",
+        "weather",
+        "conflict",
+        "infrastructure"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "risk_score": {
+      "type": "number"
+    },
+    "region": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "affected_routes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_suppliers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "monitoring",
+        "resolved",
+        "escalated"
+      ],
+      "default": "active"
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "severity",
+    "risk_score",
+    "region"
+  ]
+}

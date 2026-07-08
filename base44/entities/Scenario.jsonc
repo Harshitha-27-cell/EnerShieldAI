@@ -1,0 +1,81 @@
+{
+  "name": "Scenario",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "predefined",
+        "custom"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "strait_closure",
+        "sanctions",
+        "opec_cut",
+        "port_congestion",
+        "conflict",
+        "weather",
+        "custom"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "number"
+    },
+    "duration_days": {
+      "type": "number"
+    },
+    "supply_loss_pct": {
+      "type": "number"
+    },
+    "price_impact_pct": {
+      "type": "number"
+    },
+    "gdp_impact_pct": {
+      "type": "number"
+    },
+    "inflation_impact_pct": {
+      "type": "number"
+    },
+    "recovery_days": {
+      "type": "number"
+    },
+    "economic_damage_billion_usd": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "simulated",
+        "approved",
+        "archived"
+      ],
+      "default": "draft"
+    },
+    "affected_suppliers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "simulation_results": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "category"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "CrisisResponse",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "scenario_id": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "plan_24h": {
+      "type": "string"
+    },
+    "plan_7d": {
+      "type": "string"
+    },
+    "plan_30d": {
+      "type": "string"
+    },
+    "executive_briefing": {
+      "type": "string"
+    },
+    "procurement_actions": {
+      "type": "string"
+    },
+    "logistics_actions": {
+      "type": "string"
+    },
+    "reserve_actions": {
+      "type": "string"
+    },
+    "expected_risk_reduction_pct": {
+      "type": "number"
+    },
+    "estimated_cost_billion_usd": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "pending_approval",
+        "approved",
+        "executing",
+        "completed"
+      ],
+      "default": "draft"
+    }
+  },
+  "required": [
+    "title",
+    "risk_level"
+  ]
+}
