@@ -1,77 +1,70 @@
-# Base44 Project
+# EnerShieldAI Project
 
-Use this repository to run and edit the app locally, then publish changes back through Base44.
+Use this repository to run and edit the application locally.
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+Any changes pushed to this repository can be tracked and managed through GitHub.
 
 ## Prerequisites
 
 1. Clone the repository using the project's Git URL.
 2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
-4. Install the Base44 CLI: `npm install -g base44@latest`.
+3. Install dependencies:
 
-See the [Base44 CLI docs](https://docs.base44.com/developers/references/cli/get-started/overview) if you want to run Base44 commands directly.
+   ```bash
+   npm install
+   ```
 
 ## Run Locally
 
-Run the full local development environment from the project root:
-
-```bash
-base44 dev
-```
-
-`base44 dev` starts the local Base44 development backend and, when this app is configured for it, also starts the frontend dev server for you. Use the frontend URL printed by the command.
-
-For example, when the Base44 project config includes a `serveCommand`, `base44 dev` can launch the frontend too:
-
-```json5
-{
-  "site": {
-    "serveCommand": "npm run dev"
-  }
-}
-```
-
-In a Base44 project this lives in `base44/config.jsonc`.
-
-## Run Only The Frontend
-
-If you only want to work on the frontend against the hosted Base44 backend, run:
+Run the local development environment from the project root:
 
 ```bash
 npm run dev
 ```
 
-Open the local URL printed by Vite.
+`npm run dev` starts the Vite development server. Open the local URL displayed in the terminal to access the application.
 
-## Use The Hosted Backend
+## Build for Production
 
-For frontend-only development, create or update `.env.local` in the project root:
+Generate an optimized production build:
 
 ```bash
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=https://your-app.base44.app
+npm run build
 ```
 
-`VITE_BASE44_APP_ID` identifies the Base44 app.
+Preview the production build locally:
 
-`VITE_BASE44_APP_BASE_URL` tells the Base44 Vite plugin where to send local `/api` requests. Point it at your deployed Base44 app URL when you want the local frontend to use the hosted backend.
+```bash
+npm run preview
+```
 
-When you use `base44 dev`, the command injects the local Base44 values for you, so `.env.local` is mainly needed for frontend-only workflows.
+## Project Structure
+
+```
+EnerShieldAI/
+├── src/
+├── base44/
+├── public/
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+└── README.md
+```
 
 ## Publish Your Changes
 
-After pushing your changes to git, open the Base44 dashboard and publish the app:
+After making your changes:
 
 ```bash
-base44 dashboard open
+git add .
+git commit -m "Your commit message"
+git push origin main
 ```
 
-## Docs & Support
+Your latest changes will be available in the GitHub repository.
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+## Documentation & Support
 
-Base44 CLI command reference: [https://docs.base44.com/developers/references/cli/commands/introduction](https://docs.base44.com/developers/references/cli/commands/introduction)
+For project documentation, refer to the files included in this repository.
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+For issues, suggestions, or contributions, please create an Issue or Pull Request in this repository.
